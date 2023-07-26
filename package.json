@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test test.spec.ts --project=chromium --headed",
+    "test": "npx playwright test test.spec.ts --project=chromium",
     "test:docker": "npx playwright test test.spec.ts --project=chromium",
     "report": "npx allure generate --clean allure-results && npx allure open"
   },
