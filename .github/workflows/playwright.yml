@@ -27,6 +27,7 @@ jobs:
       run: npx playwright test
 
     - name: Generate Allure Report
+      if: always()
       run: npm run report
 
     - name: Upload Artifact
