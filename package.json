@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx playwright test test.spec.ts --project=chromium",
     "test:docker": "npx playwright test test.spec.ts --project=chromium",
-    "report": "npx allure generate --clean allure-results && npx allure open"
+    "report:open": "npx allure generate --clean allure-results && npx allure open",
+    "report": "npx allure generate --clean allure-results"
   },
   "keywords": [],
   "author": "",
