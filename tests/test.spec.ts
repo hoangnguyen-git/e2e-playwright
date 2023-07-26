@@ -29,7 +29,7 @@ test("Should add products to cart", async ({ page }) => {
 
   await page.click("#go-to-product-details-1");
   await page.click("#add-to-cart");
-  await expect(page.locator("#cart-count")).toHaveText("1");
+  await expect(page.locator("#cart-count")).toHaveText("2");
 
   await page.click("#go-back");
 
