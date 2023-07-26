@@ -1,0 +1,20 @@
+{
+  "name": "e2e-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test test.spec.ts --project=chromium --headed",
+    "test:docker": "npx playwright test test.spec.ts --project=chromium",
+    "report": "npx allure generate --clean allure-results && npx allure open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.36.1",
+    "allure-commandline": "^2.23.0",
+    "allure-playwright": "^2.4.0",
+    "typescript": "^5.1.6"
+  }
+}
