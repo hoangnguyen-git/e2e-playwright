@@ -1,8 +1,5 @@
-import { expect, test } from "@playwright/test";
-import { LoginPage } from "../pages/login-page";
-import { ProductPage } from "../pages/product-page";
-import { ProductDetailPage } from "../pages/product-detail-page";
-import { CartPage } from "../pages/cart-page";
+import { test, expect } from "../fixtures/base-page";
+// import { expect } from "@playwright/test";
 
 const userName = process.env.USERNAME!;
 const password = process.env.PASSWORD!;
@@ -20,12 +17,8 @@ test("Delete all items in the cart", async ({ request }) => {
   }
 });
 
-test("Should add products to cart", async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const productPage = new ProductPage(page);
-  const productDetailPage = new ProductDetailPage(page);
-  const cartPage = new CartPage(page);
-  await page.goto(process.env.URL);
+test("Should add products to cart", async ({ loginPage, productDetailPage, productPage, cartPage }) => {
+  await productPage.goTo(process.env.URL);
 
   await productPage.clickOnLogin();
   await loginPage.login(userName, password);

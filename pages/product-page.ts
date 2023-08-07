@@ -14,6 +14,10 @@ export class ProductPage {
       this.cbpMarket = page.locator('text=CBP Marketplace');
       this.cartCount = page.locator('#cart-count');
     }
+
+    async goTo(url: string) {
+      await this.page.goto(url);
+    }
   
     async clickOnLogin() {
       await this.loginButton.click()
