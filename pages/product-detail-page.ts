@@ -1,14 +1,12 @@
 import { type Page, type Locator } from "@playwright/test";
 
 export class ProductDetailPage {
-  private page: Page;
-  readonly addToCartButton: Locator;
-  readonly backButton: Locator;
+  private readonly addToCartButton: Locator;
+  private readonly backButton: Locator;
+  private readonly cart: Locator;
   readonly cartCount: Locator;
-  readonly cart: Locator;
 
   constructor(page: Page) {
-    this.page = page;
     this.addToCartButton = page.locator("#add-to-cart");
     this.backButton = page.locator("#go-back");
     this.cartCount = page.locator("#cart-count");

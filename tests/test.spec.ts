@@ -17,7 +17,7 @@ test("Delete all items in the cart", async ({ request }) => {
   }
 });
 
-test("Should add products to cart", async ({ loginPage, productDetailPage, productPage, cartPage }) => {
+test("Should add products to cart", async ({ page, loginPage, productDetailPage, productPage, cartPage }) => {
   await productPage.goTo(process.env.URL);
 
   await productPage.clickOnLogin();

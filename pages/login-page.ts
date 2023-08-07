@@ -1,9 +1,9 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
 
 export class LoginPage {
-    readonly username: Locator;
-    readonly password: Locator;
-    readonly loginButton: Locator;
+    private readonly username: Locator;
+    private readonly password: Locator;
+    private readonly loginButton: Locator;
   
     constructor(page: Page) {
       this.username = page.locator('xpath=//label[text()="Username"]/parent::div/following-sibling::div/input');

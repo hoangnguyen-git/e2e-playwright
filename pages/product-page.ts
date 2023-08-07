@@ -2,10 +2,10 @@ import { type Page, type Locator } from '@playwright/test';
 
 export class ProductPage {
     private page: Page;
-    readonly loginButton: Locator;
-    readonly cart: Locator;
-    readonly cbpMarket: Locator;
-    readonly cartCount: Locator;
+    private readonly loginButton: Locator;
+    private readonly cart: Locator;
+    private readonly cbpMarket: Locator;
+    private readonly cartCount: Locator;
   
     constructor(page: Page) {
       this.page = page;
