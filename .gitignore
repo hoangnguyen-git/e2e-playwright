@@ -5,3 +5,4 @@ node_modules/
 /allure*
 html-report
 .DS_Store
+html-report.zip

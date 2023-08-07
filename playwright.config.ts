@@ -4,13 +4,21 @@ import { defineConfig, devices } from "@playwright/test";
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+require('dotenv').config();
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  //Global Setup to run before all tests
+  globalSetup: `./configs/global-setup`,
+
+  //Global Teardown to run after all tests
+  globalTeardown: `./configs/global-teardown`,
+  timeout: 5 * 60 * 1000,
+   
   testDir: "./tests",
+  testMatch: '**/*.spec.ts',
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -27,6 +35,12 @@ export default defineConfig({
         detail: true,
         outputFolder: "allure-results",
         suiteTitle: false,
+        environmentInfo: {
+          E2E_NODE_VERSION: process.version,
+          E2E_OS: process.platform,
+          ENVIRONMENT: process.env.ENV,
+          URL: process.env.URL
+          },
       },
     ],
     [`html`, { outputFolder: "html-report", open: "never" }],
